@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  react:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: react-container
+    ports:
+      - '3000:3000'
+
+  node:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: node-container
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./node:/app
+      - /node_modules  
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - codeTest:/data/db
+volumes:
+  codeTest:
