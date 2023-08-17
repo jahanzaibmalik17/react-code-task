@@ -15,9 +15,7 @@ services:
     container_name: node-container
     ports:
       - '8000:8000'
-    volumes:
-      - ./node:/app
-      - /node_modules  
+      
   mongodb:
     image: mongo
     ports:
