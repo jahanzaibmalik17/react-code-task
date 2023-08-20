@@ -1,6 +1,7 @@
 import { RequestHandler } from 'express-serve-static-core';
 import { SearchTerm } from '../models/searchTerm'
 
+
 export const createTerm: RequestHandler = async (req, res, next) => {
     try {
         const searchTerm = await SearchTerm.findOne({ name: req.body.name })

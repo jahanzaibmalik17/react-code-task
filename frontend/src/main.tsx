@@ -11,6 +11,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import Autocomplete from '@mui/material/Autocomplete';
+import './main.css'
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -63,9 +64,12 @@ export default function Demo() {
   }, [debouncedSearch, searchBy]);
 
   return (
-    <div className='' style={{ marginTop: "50px", marginLeft: "20px" }}>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
+    <div className='main' style={{ marginTop: "50px", marginLeft: "20px" }}>
+        <header className="App-header">
+          React Code Task
+      </header>
+      <Box sx={{ flexGrow: 1 }} >
+        <Grid container spacing={3}>
           <Grid><title>React Debounce</title></Grid>
           <Grid item xs={4} md={4}>
             <Item>
@@ -132,7 +136,7 @@ export default function Demo() {
       {loading && <div>Loading...</div>}
       {!loading &&
         records.length > 0 && records.map((rec) => {
-          return <div key={rec.id}>{rec.name}</div>;
+          return <div className="search-records" key={rec.id}>{rec.name}</div>;
         })}
     </div>
   );

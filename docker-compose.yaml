@@ -7,7 +7,6 @@ services:
     container_name: react-container
     ports:
       - '3000:3000'
-
   node:
     build: 
       context: ./backend
@@ -15,7 +14,6 @@ services:
     container_name: node-container
     ports:
       - '8000:8000'
-      
   mongodb:
     image: mongo
     ports:
@@ -23,4 +21,4 @@ services:
     volumes:
       - codeTest:/data/db
 volumes:
-  codeTest:
+  codeTest:      
